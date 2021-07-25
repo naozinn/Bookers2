@@ -1,0 +1,17 @@
+<h2>User info</h2>
+<div>
+   <%= form_with model:@book, local:true do |f| %>
+    <div>
+      <label for="inputTitle">Titlee</label>
+      <br><%= f.text_field :title, autofocus: true, id:"inputTitle", placeholder:"タイトル"%>
+    </div>
+
+    <div>
+      <label for="inputbody">Opinion</label>
+      <br><%= f.text_area :body, placeholder: "本文" %>
+    </div>
+    <div>
+      <%= f.submit "Update Book" %>
+    </div>
+   <% end %>
+</div>

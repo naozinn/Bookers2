@@ -21,8 +21,9 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
-    @user = User.new
+    @books = Book.all
+    @book = Book.new
+    @user = current_user
   end
 
   private

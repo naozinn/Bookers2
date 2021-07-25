@@ -1,3 +1,6 @@
+<% if flash[:notice2] %>
+  <p><%= flash[:notice2] %></p>
+<% end %>
 <div class="container">
   <div class="row">
     <div class="col-lg-4">
@@ -5,13 +8,21 @@
       <div class="profile-container">
        <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
       <br>
-        <th>name</th>
-        <th class = "profile-name"></th>
+        <th>
+          <strong>name</strong>
+        </th>
+        <th class = "profile-name">
+          <strong><%= @user.name %></strong>
+        </th>
       </br>
       <br>
-        <th>introduction</th>
-        <th class = "profile-name"></th>
-      </br>
+        <th>
+          <strong>introduction</strong>
+        </th>
+        <th class = "profile-introduction">
+          <strong><%= @user.introduction %></strong>
+        </th>
+        </br>
         <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
       </div>
 
@@ -28,7 +39,7 @@
       <% end %>
     </div>
       <div class="col-lg-8">
-       <h1>Books</h1>
+       <h2>Books</h2>
 
 
         <table class="table table-striped">
@@ -53,6 +64,6 @@
       </div>
     </div>
 </div>
-
-<br>
-<p id="notice"><%= notice %></p>
+<footer>
+  <p>CopyRight Infratop.inc</p>
+  </footer>

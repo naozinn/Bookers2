@@ -16,8 +16,8 @@
         <th>
           <strong>introduction</strong>
         </th>
-        <th class = "profile-name">
-          <strong><%=  %></strong>
+        <th class = "profile-introduction">
+          <strong><%= @user.introduction %></strong>
         </th>
       </br>
         <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
@@ -52,7 +52,7 @@
             <% @books.each do |book| %>
               <tr>
                <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></td>
-               <td><%= book.title %></td>
+               <td><%= link_to book.title,book_path, class: 'nav-link text-blue' %></td>
                <td><%= book.body %></td>
               </tr>
             <% end %>
@@ -61,6 +61,3 @@
       </div>
     </div>
 </div>
-
-<br>
-<p id="notice"><%= notice %></p>
