@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @books = @user.books
     @book = Book.new
+    flash[:notice2] = "Signed in successfully."
   end
 
   def edit
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(user_params)
     redirect_to user_path(@user.id)
+    flash[:notice] = "You have created book successfully."
   end
 
   def create
